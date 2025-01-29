@@ -1,6 +1,6 @@
 # Black Jack 21 🎴
 
-Este es un proyecto desarrollado en **JavaScript** para crear el clásico juego de **Black Jack 21**, utilizando funciones básicas, arreglos y la librería **Underscore.js** para funcionalidades como `shuffle`.
+Este es un proyecto desarrollado en **JavaScript** en el curso de Fernando herrera. para crear el clásico juego de **Black Jack 21**, utilizando funciones básicas, arreglos y la librería **Underscore.js** para funcionalidades como `shuffle`.
 
 ## 📌 Tecnologías Utilizadas
 - **JavaScript** (Vanilla JS)
