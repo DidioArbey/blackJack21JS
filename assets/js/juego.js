@@ -39,7 +39,7 @@ const crearDeck = () => {
 
     // funcion de undersore para barajar o entregar el arreglo aleatorio
     deck = _.shuffle(deck);
-    // console.log(deck);
+    console.log(deck);
     return deck;
 }
 
@@ -80,8 +80,19 @@ const turnoOrdenador = (puntosMinimos) => {
         if( puntosMinimos > 21){
             break;
         }
-
     }while((puntosOrdenador < puntosMinimos) && (puntosMinimos <= 21));
+    setTimeout(()=>{
+        if ( puntosOrdenador === puntosMinimos){
+            alert ('Nadie gana 😢')
+        }else if (puntosMinimos > 21 ){
+            alert('Ordenador Gana 💻 ')
+        }else if (puntosOrdenador > 21){
+            alert('Jugador Gana 🧑🏻')
+        }else {
+            alert('Ordenador Gana 💻 ')
+        }
+
+    },10);
 };
 
 //Eventos
@@ -108,14 +119,32 @@ btnPedir.addEventListener('click', () => {
         turnoOrdenador(puntosJugador);
     }
 
+    
+
 });
 
 // btnDetener
 
 btnDetener.addEventListener('click', () =>{
-   
     btnPedir.disabled = true;
     btnDetener.disabled = true;
     turnoOrdenador(puntosJugador);
-
+    
 });
+
+// btnNuevo
+btnNuevo.addEventListener('click',()=>{
+    console.clear();
+    deck = [];
+    deck = crearDeck();
+    puntosJugador   = 0;
+    puntosOrdenador = 0;
+    puntosHTML[0].innerText = 0;
+    puntosHTML[1].innerText = 0;
+
+    divCartasJugador.innerHTML      = '';
+    divCartasOrdenador.innerHTML    = '';
+
+    btnPedir.disabled   = false;
+    btnDetener.disabled = false;
+})
